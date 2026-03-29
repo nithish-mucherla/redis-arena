@@ -11,6 +11,7 @@ public class AdmissionScheduler {
 
     @Scheduled(fixedDelay = 10000)
     public void admitUsers() {
+        System.out.println("Running the admission scheduler");
         // hardcoded the event id but in prod this would iterate over all the events
         queueService.admitNextUsers("event:123");
     }
